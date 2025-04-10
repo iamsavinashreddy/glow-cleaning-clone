@@ -34,7 +34,9 @@ const HeroSection = () => {
           {/* Text Section */}
           <div className="w-full md:w-2/5 space-y-4">
             <h1 className="text-3xl md:text-4xl font-bold leading-tight">
-              Professional Home Cleaning Services
+              <span className="text-brand-yellow">Professional</span>
+              <br />
+              Home Cleaning Services
             </h1>
             <p className="text-base text-gray-700">
               Your trusted partner for a spotless, healthy home. Book our services and enjoy a clean, comfortable living space.
@@ -53,6 +55,29 @@ const HeroSection = () => {
               </Link>
             </div>
           </div>
+
+          {/*
+          <div className="w-full md:w-2/5 space-y-4">
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight">
+              Professional Home Cleaning Services
+            </h1>
+            <p className="text-base text-gray-700">
+              Your trusted partner for a spotless, healthy home. Book our services and enjoy a clean, comfortable living space.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to="/services">
+                <Button className="primary-button flex items-center gap-2">
+                  <Search size={18} />
+                  Find Cleaning Services
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button variant="outline" className="secondary-button">
+                  Wanna know More..?
+                </Button>
+              </Link>
+            </div>
+          </div> */}
 
           {/* Image Section */}
           <div className="w-full md:w-3/5 flex justify-center">
