@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
@@ -24,22 +23,22 @@ const HeroSection = () => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }, 5000);
-    
+
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative pt-20 pb-6 md:pt-24 md:pb-8 bg-gradient-to-b from-brand-yellow-light to-white">
+    <section className="relative bg-gradient-to-b from-brand-yellow-light to-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row gap-6 items-center">
-          <div className="w-full md:w-1/2 space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+        <div className="flex flex-col md:flex-row items-center">
+          {/* Text Section */}
+          <div className="w-full md:w-1/4 space-y-4">
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight">
               Professional Home Cleaning Services
             </h1>
-            <p className="text-lg text-gray-700">
+            <p className="text-base text-gray-700">
               Your trusted partner for a spotless, healthy home. Book our services and enjoy a clean, comfortable living space.
             </p>
-            
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/services">
                 <Button className="primary-button flex items-center gap-2">
@@ -49,16 +48,17 @@ const HeroSection = () => {
               </Link>
               <Link to="/about">
                 <Button variant="outline" className="secondary-button">
-                  Learn More
+                  Wanna know More..?
                 </Button>
               </Link>
             </div>
           </div>
-          
-          <div className="w-full md:w-1/2 flex justify-center">
-            <div className="relative w-full max-w-md overflow-hidden rounded-lg shadow-lg" style={{ height: "300px" }}>
+
+          {/* Image Section */}
+          <div className="w-full md:w-3/4 flex justify-center">
+            <div className="relative w-full max-w-full overflow-hidden rounded-lg shadow-lg" style={{ height: "400px" }}>
               {images.map((src, index) => (
-                <img 
+                <img
                   key={index}
                   src={src}
                   alt={`VR Best Shiners cleaning service ${index + 1}`}
@@ -71,11 +71,19 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Wave shape divider */}
       <div className="absolute bottom-0 left-0 w-full">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 50" className="w-full h-auto">
-          <path fill="#ffffff" fillOpacity="1" d="M0,32L80,37.3C160,43,320,53,480,48C640,43,800,27,960,24C1120,21,1280,32,1360,37.3L1440,43L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 50"
+          className="w-full h-auto"
+        >
+          <path
+            fill="#ffffff"
+            fillOpacity="1"
+            d="M0,32L80,37.3C160,43,320,53,480,48C640,43,800,27,960,24C1120,21,1280,32,1360,37.3L1440,43L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+          ></path>
         </svg>
       </div>
     </section>
