@@ -7,7 +7,7 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div className="pt-20 pb-2 bg-white">
+      <div className="pt-15 pb-2 bg-white">
         <ServicesSection />
       </div>
       <Footer />
