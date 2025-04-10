@@ -12,16 +12,16 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <div className="bg-white py-4">
+      <div className="bg-white py-2">
         <ServicesSection />
       </div>
-      <div className="bg-brand-yellow-light py-8">
+      <div className="bg-brand-yellow-light py-6">
         <CleaningPackages />
       </div>
-      <div className="bg-white py-8">
+      <div className="bg-white py-6">
         <DiscountVoucher />
       </div>
-      <div className="bg-brand-yellow-light py-8">
+      <div className="bg-brand-yellow-light py-6">
         <Testimonials />
       </div>
       <Footer />

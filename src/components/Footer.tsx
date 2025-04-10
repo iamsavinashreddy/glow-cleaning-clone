@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">CleaningPro</h3>
+            <h3 className="text-xl font-bold mb-4">VR Best Shiners</h3>
             <p className="text-gray-300 mb-4">
               Professional cleaning services for homes of all sizes. We bring cleanliness and comfort to your living space.
             </p>
@@ -60,11 +60,11 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <Mail size={18} className="text-brand-yellow mr-2 mt-1" />
-                <span className="text-gray-300">info@cleaningpro.com</span>
+                <span className="text-gray-300">info@vrbestcleaners.com</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={18} className="text-brand-yellow mr-2 mt-1" />
-                <span className="text-gray-300">123 Cleaning Street, City, Country</span>
+                <span className="text-gray-300">123 Cleaning Street, New Jersey, USA</span>
               </li>
             </ul>
           </div>
@@ -84,7 +84,7 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {currentYear} CleaningPro. All rights reserved.
+            &copy; {currentYear} VR Best Shiners. All rights reserved.
           </p>
           <p className="text-gray-400 text-sm mt-2 md:mt-0">
             Website managed by <a href="https://www.vrbest.group" target="_blank" rel="noopener noreferrer" className="text-brand-yellow hover:underline">VR Best IT Solutions</a>

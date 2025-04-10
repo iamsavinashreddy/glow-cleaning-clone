@@ -10,7 +10,6 @@ import {
   CarouselNext,
   CarouselPrevious
 } from "@/components/ui/carousel";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface Package {
   id: string;
@@ -119,6 +118,62 @@ const cleaningPackages: Package[] = [
       "Kitchen area cleaning",
       "Restroom cleaning"
     ]
+  },
+  {
+    id: "commercial",
+    title: "Commercial Clean",
+    size: "Commercial Space",
+    price: 399,
+    hours: 8,
+    features: [
+      "Complete facility cleaning",
+      "Floor care and maintenance",
+      "Restroom sanitization",
+      "Waste removal",
+      "Common area cleaning"
+    ]
+  },
+  {
+    id: "special-event",
+    title: "Special Event Clean",
+    size: "Event Venue",
+    price: 249,
+    hours: 4,
+    features: [
+      "Pre-event setup cleaning",
+      "Post-event cleanup",
+      "Trash collection and removal",
+      "Floor cleaning",
+      "Surface sanitization"
+    ]
+  },
+  {
+    id: "deep-clean",
+    title: "Deep Clean",
+    size: "Any Size",
+    price: 329,
+    hours: 6,
+    features: [
+      "Detailed cleaning of all areas",
+      "Behind and under furniture",
+      "Detailed bathroom sanitization",
+      "Kitchen deep clean",
+      "Cobweb removal"
+    ]
+  },
+  {
+    id: "eco-friendly",
+    title: "Eco-Friendly Clean",
+    size: "Any Size",
+    price: 219,
+    hours: 4,
+    features: [
+      "All-natural cleaning products",
+      "Microfiber technology",
+      "Steam cleaning",
+      "HEPA filtration",
+      "Allergen removal"
+    ]
   }
 ];
 
@@ -152,31 +207,34 @@ const CleaningPackages = () => {
           </div>
         </div>
         
-        {/* Mobile and Tablet Horizontal Scroll */}
-        <div className="md:hidden">
-          <ScrollArea className="w-full whitespace-nowrap">
-            <div className="flex space-x-4 pb-4 px-1">
-              {filteredPackages.map((pkg) => (
-                <div 
-                  key={pkg.id} 
-                  className="bg-white p-4 rounded-lg shadow-md flex-shrink-0 w-[300px]"
-                >
-                  <div className="text-center mb-4">
+        {/* Carousel for both mobile and desktop */}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {filteredPackages.map((pkg) => (
+              <CarouselItem key={pkg.id} className="pl-2 md:pl-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                <div className="bg-white p-4 rounded-lg shadow-md h-full flex flex-col">
+                  <div className="text-center mb-3">
                     <span className="inline-block bg-brand-yellow-light rounded-full px-3 py-1 text-sm font-semibold mb-2">
                       {pkg.size}
                     </span>
-                    <h3 className="text-xl font-bold">{pkg.title}</h3>
+                    <h3 className="text-lg font-bold">{pkg.title}</h3>
                     <div className="mt-2">
-                      <span className="text-2xl font-bold">${pkg.price}</span>
+                      <span className="text-xl font-bold">${pkg.price}</span>
                       <span className="text-gray-600"> / session</span>
                     </div>
-                    <p className="text-gray-600 mt-1">Approx. {pkg.hours} hours</p>
+                    <p className="text-gray-600 mt-1 text-sm">Approx. {pkg.hours} hours</p>
                   </div>
                   
-                  <ul className="mb-4 space-y-2 text-left">
+                  <ul className="mb-3 space-y-1 text-left flex-grow">
                     {pkg.features.slice(0, 3).map((feature, index) => (
                       <li key={index} className="flex items-start">
-                        <svg className="h-5 w-5 text-brand-yellow mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="h-4 w-4 text-brand-yellow mr-1 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                         </svg>
                         <span className="whitespace-normal text-sm">{feature}</span>
@@ -187,7 +245,7 @@ const CleaningPackages = () => {
                   <Dialog>
                     <DialogTrigger asChild>
                       <Button 
-                        className="primary-button w-full" 
+                        className="primary-button w-full mt-auto text-sm py-2" 
                         onClick={() => setSelectedPackage(pkg)}
                       >
                         Book Now
@@ -200,56 +258,14 @@ const CleaningPackages = () => {
                     </DialogContent>
                   </Dialog>
                 </div>
-              ))}
-            </div>
-          </ScrollArea>
-        </div>
-
-        {/* Desktop Grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredPackages.map((pkg) => (
-            <div key={pkg.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="text-center mb-6">
-                <span className="inline-block bg-brand-yellow-light rounded-full px-4 py-1 text-sm font-semibold mb-2">
-                  {pkg.size}
-                </span>
-                <h3 className="text-2xl font-bold">{pkg.title}</h3>
-                <div className="mt-2">
-                  <span className="text-3xl font-bold">${pkg.price}</span>
-                  <span className="text-gray-600"> / session</span>
-                </div>
-                <p className="text-gray-600 mt-1">Approx. {pkg.hours} hours</p>
-              </div>
-              
-              <ul className="mb-6 space-y-2">
-                {pkg.features.map((feature, index) => (
-                  <li key={index} className="flex items-start">
-                    <svg className="h-5 w-5 text-brand-yellow mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button 
-                    className="primary-button w-full" 
-                    onClick={() => setSelectedPackage(pkg)}
-                  >
-                    Book Now
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[500px]">
-                  <BookingForm 
-                    packageInfo={selectedPackage} 
-                  />
-                </DialogContent>
-              </Dialog>
-            </div>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-center mt-4 space-x-2">
+            <CarouselPrevious className="relative static left-0 right-0 top-0 translate-y-0 bg-white/50 backdrop-blur-sm" />
+            <CarouselNext className="relative static left-0 right-0 top-0 translate-y-0 bg-white/50 backdrop-blur-sm" />
+          </div>
+        </Carousel>
       </div>
     </section>
   );

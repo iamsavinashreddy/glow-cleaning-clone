@@ -9,7 +9,12 @@ const images = [
   "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   "https://images.unsplash.com/photo-1581578017065-fa0b7b443e66?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1556911220-bda9da8a1321?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  "https://images.unsplash.com/photo-1556911220-bda9da8a1321?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1586455549116-5a4eb0421121?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1618220179428-22790b485390?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1559830772-73d4bee960fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1618220252344-8ec99ec624b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
 ];
 
 const HeroSection = () => {
@@ -24,10 +29,10 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative pt-24 pb-8 md:pt-28 md:pb-10 bg-gradient-to-b from-brand-yellow-light to-white">
+    <section className="relative pt-20 pb-6 md:pt-24 md:pb-8 bg-gradient-to-b from-brand-yellow-light to-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-6 items-center">
-          <div className="w-full md:w-1/2 space-y-5">
+          <div className="w-full md:w-1/2 space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
               Professional Home Cleaning Services
             </h1>
@@ -56,7 +61,7 @@ const HeroSection = () => {
                 <img 
                   key={index}
                   src={src}
-                  alt={`Cleaning service ${index + 1}`}
+                  alt={`VR Best Shiners cleaning service ${index + 1}`}
                   className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
                     index === currentImage ? "opacity-100" : "opacity-0"
                   }`}
@@ -69,8 +74,8 @@ const HeroSection = () => {
       
       {/* Wave shape divider */}
       <div className="absolute bottom-0 left-0 w-full">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" className="w-full h-auto">
-          <path fill="#ffffff" fillOpacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 50" className="w-full h-auto">
+          <path fill="#ffffff" fillOpacity="1" d="M0,32L80,37.3C160,43,320,53,480,48C640,43,800,27,960,24C1120,21,1280,32,1360,37.3L1440,43L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
         </svg>
       </div>
     </section>
