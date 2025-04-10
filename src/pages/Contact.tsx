@@ -57,7 +57,7 @@ const Contact = () => {
         </div>
       </div>
       
-      <section className="section-padding bg-white">
+      <section className="py-10 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="w-full lg:w-1/3">
