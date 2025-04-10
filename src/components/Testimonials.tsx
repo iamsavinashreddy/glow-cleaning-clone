@@ -15,7 +15,7 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     name: "Anu",
-    location: "South Jersey,
+    location: "South Jersey",
     rating: 5,
     text: "Amazing service! The team was professional, thorough, and left my home spotless. I've been using their services for 6 months now and have never been disappointed.",
     image: "https://media.istockphoto.com/id/1446465512/vector/avatar-portrait-of-a-young-caucasian-girl-woman-in-round-frame.jpg?s=612x612&w=0&k=20&c=qomX6YxYq9bQNoevWfNF_ddlngbTS3YnHwLiyd7cMOo="
