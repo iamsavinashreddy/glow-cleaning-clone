@@ -16,10 +16,10 @@ const Packages = () => {
           </p>
         </div>
       </div>
-      <div className="py-8 bg-white">
+      <div className="py-8 bg-brand-yellow-light">
         <CleaningPackages />
       </div>
-      <div className="py-8 bg-gray-50">
+      <div className="py-8 bg-white">
         <DiscountVoucher />
       </div>
       <Footer />

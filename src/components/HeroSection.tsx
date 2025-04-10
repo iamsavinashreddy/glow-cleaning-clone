@@ -44,7 +44,7 @@ const HeroSection = () => {
               </Link>
               <Link to="/about">
                 <Button variant="outline" className="secondary-button">
-                  About Us
+                  Learn More
                 </Button>
               </Link>
             </div>

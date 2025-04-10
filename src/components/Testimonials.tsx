@@ -82,7 +82,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-brand-yellow-light">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
@@ -106,7 +106,7 @@ const Testimonials = () => {
                   key={testimonial.id} 
                   className="w-full flex-shrink-0 px-4"
                 >
-                  <div className="bg-gray-50 rounded-lg p-6 md:p-8 shadow-md">
+                  <div className="bg-white rounded-lg p-6 md:p-8 shadow-md">
                     <div className="flex items-center mb-4">
                       <img 
                         src={testimonial.image} 

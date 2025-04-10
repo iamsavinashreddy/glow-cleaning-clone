@@ -15,13 +15,13 @@ const Index = () => {
       <div className="bg-white py-8">
         <ServicesSection />
       </div>
-      <div className="bg-gray-50 py-8">
+      <div className="bg-brand-yellow-light py-8">
         <CleaningPackages />
       </div>
       <div className="bg-white py-8">
         <DiscountVoucher />
       </div>
-      <div className="bg-gray-50 py-8">
+      <div className="bg-brand-yellow-light py-8">
         <Testimonials />
       </div>
       <Footer />

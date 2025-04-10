@@ -55,6 +55,62 @@ const cleaningPackages: Package[] = [
       "Interior cabinet cleaning",
       "Wall spot cleaning"
     ]
+  },
+  {
+    id: "4bhk",
+    title: "Deluxe Clean",
+    size: "4 BHK",
+    price: 249,
+    hours: 5,
+    features: [
+      "All Premium Clean services",
+      "Refrigerator interior cleaning",
+      "Oven interior cleaning",
+      "Window blinds dusting",
+      "Baseboards scrubbing"
+    ]
+  },
+  {
+    id: "villa",
+    title: "Villa Clean",
+    size: "Villa",
+    price: 349,
+    hours: 7,
+    features: [
+      "All Deluxe Clean services",
+      "Outdoor patio cleaning",
+      "Garage sweeping",
+      "Upholstery vacuuming",
+      "Chandelier dusting"
+    ]
+  },
+  {
+    id: "move-in",
+    title: "Move-In/Out Clean",
+    size: "Any Size",
+    price: 299,
+    hours: 6,
+    features: [
+      "Deep cleaning of all rooms",
+      "Inside cabinets and drawers",
+      "Appliance deep cleaning",
+      "Window and track cleaning",
+      "Carpet steam cleaning"
+    ]
+  },
+  {
+    id: "office",
+    title: "Office Clean",
+    size: "Small Office",
+    price: 179,
+    hours: 3,
+    features: [
+      "Reception area cleaning",
+      "Workstation sanitizing",
+      "Meeting room cleaning",
+      "Kitchen area cleaning",
+      "Restroom cleaning"
+    ]
   }
 ];
 
@@ -68,7 +124,7 @@ const CleaningPackages = () => {
   );
 
   return (
-    <section id="packages" className="section-padding bg-gray-50">
+    <section id="packages" className="section-padding bg-brand-yellow-light">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Cleaning Packages</h2>
@@ -88,7 +144,7 @@ const CleaningPackages = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPackages.map((pkg) => (
             <div key={pkg.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="text-center mb-6">
