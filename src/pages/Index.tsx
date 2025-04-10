@@ -12,7 +12,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <div className="bg-white py-8">
+      <div className="bg-white py-4">
         <ServicesSection />
       </div>
       <div className="bg-brand-yellow-light py-8">

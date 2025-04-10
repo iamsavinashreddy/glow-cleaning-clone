@@ -24,10 +24,10 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative pt-24 pb-12 md:py-32 bg-gradient-to-b from-brand-yellow-light to-white">
+    <section className="relative pt-24 pb-8 md:pt-28 md:pb-10 bg-gradient-to-b from-brand-yellow-light to-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="w-full md:w-1/2 space-y-6">
+        <div className="flex flex-col md:flex-row gap-6 items-center">
+          <div className="w-full md:w-1/2 space-y-5">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
               Professional Home Cleaning Services
             </h1>
@@ -51,16 +51,15 @@ const HeroSection = () => {
           </div>
           
           <div className="w-full md:w-1/2 flex justify-center">
-            <div className="relative w-full max-w-md overflow-hidden rounded-lg shadow-lg">
+            <div className="relative w-full max-w-md overflow-hidden rounded-lg shadow-lg" style={{ height: "300px" }}>
               {images.map((src, index) => (
                 <img 
                   key={index}
                   src={src}
                   alt={`Cleaning service ${index + 1}`}
-                  className={`absolute top-0 left-0 w-full h-auto object-cover transition-opacity duration-1000 ${
+                  className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
                     index === currentImage ? "opacity-100" : "opacity-0"
                   }`}
-                  style={{ aspectRatio: "4/3" }}
                 />
               ))}
             </div>

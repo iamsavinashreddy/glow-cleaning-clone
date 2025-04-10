@@ -3,6 +3,14 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { BookingForm } from "@/components/BookingForm";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface Package {
   id: string;
@@ -124,16 +132,16 @@ const CleaningPackages = () => {
   );
 
   return (
-    <section id="packages" className="section-padding bg-brand-yellow-light">
-      <div className="container mx-auto">
-        <div className="text-center mb-12">
+    <section id="packages" className="section-padding bg-brand-yellow-light py-8">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Cleaning Packages</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Choose the perfect cleaning package for your home based on your space and needs
           </p>
           
           {/* Search Box */}
-          <div className="max-w-md mx-auto mt-8">
+          <div className="max-w-md mx-auto mt-6">
             <input
               type="text"
               placeholder="Search by package or size (1BHK, 2BHK, etc.)"
@@ -143,8 +151,62 @@ const CleaningPackages = () => {
             />
           </div>
         </div>
+        
+        {/* Mobile and Tablet Horizontal Scroll */}
+        <div className="md:hidden">
+          <ScrollArea className="w-full whitespace-nowrap">
+            <div className="flex space-x-4 pb-4 px-1">
+              {filteredPackages.map((pkg) => (
+                <div 
+                  key={pkg.id} 
+                  className="bg-white p-4 rounded-lg shadow-md flex-shrink-0 w-[300px]"
+                >
+                  <div className="text-center mb-4">
+                    <span className="inline-block bg-brand-yellow-light rounded-full px-3 py-1 text-sm font-semibold mb-2">
+                      {pkg.size}
+                    </span>
+                    <h3 className="text-xl font-bold">{pkg.title}</h3>
+                    <div className="mt-2">
+                      <span className="text-2xl font-bold">${pkg.price}</span>
+                      <span className="text-gray-600"> / session</span>
+                    </div>
+                    <p className="text-gray-600 mt-1">Approx. {pkg.hours} hours</p>
+                  </div>
+                  
+                  <ul className="mb-4 space-y-2 text-left">
+                    {pkg.features.slice(0, 3).map((feature, index) => (
+                      <li key={index} className="flex items-start">
+                        <svg className="h-5 w-5 text-brand-yellow mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="whitespace-normal text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button 
+                        className="primary-button w-full" 
+                        onClick={() => setSelectedPackage(pkg)}
+                      >
+                        Book Now
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[500px]">
+                      <BookingForm 
+                        packageInfo={selectedPackage} 
+                      />
+                    </DialogContent>
+                  </Dialog>
+                </div>
+              ))}
+            </div>
+          </ScrollArea>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Desktop Grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPackages.map((pkg) => (
             <div key={pkg.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="text-center mb-6">

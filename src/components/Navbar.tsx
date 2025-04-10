@@ -43,14 +43,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Desktop Navigation - Moved to left */}
-        <nav className="hidden md:flex items-center space-x-4">
-          <Link to="/services" className="font-medium hover:text-brand-yellow hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">Services</Link>
-          <Link to="/packages" className="font-medium hover:text-brand-yellow hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">Packages</Link>
-          <Link to="/contact" className="font-medium hover:text-brand-yellow hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">Contact</Link>
-        </nav>
-
-        {/* Call To Action - centered */}
+        {/* Center - Call To Action and Phone */}
         <div className="hidden md:flex items-center space-x-4">
           <div className="flex items-center">
             <Phone size={18} className="text-brand-yellow mr-2" />
@@ -60,6 +53,13 @@ const Navbar = () => {
             <Button className="primary-button">Book Now</Button>
           </Link>
         </div>
+
+        {/* Desktop Navigation - Moved to right */}
+        <nav className="hidden md:flex items-center space-x-4">
+          <Link to="/services" className="font-medium hover:text-brand-yellow hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">Services</Link>
+          <Link to="/packages" className="font-medium hover:text-brand-yellow hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">Packages</Link>
+          <Link to="/contact" className="font-medium hover:text-brand-yellow hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">Contact</Link>
+        </nav>
 
         {/* Mobile Menu Button */}
         <button 
