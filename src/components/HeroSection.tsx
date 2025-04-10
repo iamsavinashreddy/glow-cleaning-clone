@@ -28,11 +28,11 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-b from-brand-yellow-light to-white">
+    <section className="relative bg-gradient-to-b from-brand-yellow-light to-white pt-28 pb-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           {/* Text Section */}
-          <div className="w-full md:w-1/4 space-y-4">
+          <div className="w-full md:w-2/5 space-y-4">
             <h1 className="text-3xl md:text-4xl font-bold leading-tight">
               Professional Home Cleaning Services
             </h1>
@@ -55,7 +55,7 @@ const HeroSection = () => {
           </div>
 
           {/* Image Section */}
-          <div className="w-full md:w-3/4 flex justify-center">
+          <div className="w-full md:w-3/5 flex justify-center">
             <div className="relative w-full max-w-full overflow-hidden rounded-lg shadow-lg" style={{ height: "400px" }}>
               {images.map((src, index) => (
                 <img
