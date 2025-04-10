@@ -35,11 +35,10 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <img 
-              src="/placeholder.svg" 
-              alt="CleaningPro Logo" 
+              src="https://raw.githubusercontent.com/iamsavinashreddy/vrbest-group/main/Img/vr-best-shiners-logo-1.png" 
+              alt="VR Best Shiners Logo" 
               className="h-10"
             />
-            <span className="ml-2 font-bold text-xl">CleaningPro</span>
           </Link>
         </div>
 
