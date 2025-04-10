@@ -10,7 +10,7 @@ const FounderSection = () => {
         <div className="flex flex-col md:flex-row items-center gap-8 max-w-4xl mx-auto">
           <div className="flex-shrink-0">
             <Avatar className="h-32 w-32 border-4 border-brand-yellow">
-              <AvatarImage src="https://raw.githubusercontent.com/iamsavinashreddy/vrbest-group/main/Img/Vedha.png" alt="Founder" />
+              <AvatarImage src="https://raw.githubusercontent.com/iamsavinashreddy/vrbest-group/main/Img/Vedha.jpg" alt="Founder" />
               <AvatarFallback>VR</AvatarFallback>
             </Avatar>
           </div>
