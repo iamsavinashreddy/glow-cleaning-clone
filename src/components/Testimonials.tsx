@@ -14,20 +14,20 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    location: "New York",
+    name: "Anu",
+    location: "South Jersey,
     rating: 5,
     text: "Amazing service! The team was professional, thorough, and left my home spotless. I've been using their services for 6 months now and have never been disappointed.",
-    image: "https://randomuser.me/api/portraits/women/32.jpg"
+    image: "https://media.istockphoto.com/id/1446465512/vector/avatar-portrait-of-a-young-caucasian-girl-woman-in-round-frame.jpg?s=612x612&w=0&k=20&c=qomX6YxYq9bQNoevWfNF_ddlngbTS3YnHwLiyd7cMOo="
   },
   {
     id: 2,
-    name: "Michael Brown",
-    location: "Chicago",
+    name: "Swapna",
+    location: "KoP Area",
     rating: 5,
     text: "I was impressed by the attention to detail. They cleaned areas I didn't even think about! Highly recommend their deep cleaning service.",
-    image: "https://randomuser.me/api/portraits/men/44.jpg"
-  },
+    image: "https://static.vecteezy.com/system/resources/previews/009/749/643/non_2x/woman-profile-mascot-illustration-female-avatar-character-icon-cartoon-girl-head-face-business-user-logo-free-vector.jpg"
+  } /*,
   {
     id: 3,
     name: "Emily Williams",
@@ -43,7 +43,7 @@ const testimonials: Testimonial[] = [
     rating: 5,
     text: "The 3BHK premium package was perfect for our family home. They brought all their own supplies and equipment, and the house smelled amazing after they were done.",
     image: "https://randomuser.me/api/portraits/men/62.jpg"
-  }
+  } */
 ];
 
 const Testimonials = () => {
