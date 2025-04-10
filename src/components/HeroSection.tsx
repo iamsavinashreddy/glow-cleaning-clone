@@ -37,7 +37,7 @@ const HeroSection = () => {
               <span
                 className="text-5xl md:text-6xl font-extrabold text-brand-yellow font-serif"
                 style={{
-                  textShadow: "3px 3px 6px rgba(0, 0, 0, 0.6), 0 0 5px rgba(0, 0, 0, 0.4)"
+                  textShadow: "4px 4px 8px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0, 0, 0, 0.6)"
                 }}
               >
                 Professional
