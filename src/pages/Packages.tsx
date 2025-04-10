@@ -11,7 +11,7 @@ const Packages = () => {
       <div className="pt-20 pb-1 bg-brand-yellow-light">
         <CleaningPackages />
       </div>
-      <div className="py-4 bg-white">
+      <div className="py-1 bg-white">
         <DiscountVoucher />
       </div>
       <Footer />
