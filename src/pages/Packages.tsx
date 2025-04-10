@@ -8,7 +8,7 @@ const Packages = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div className="pt-18 pb-2 bg-brand-yellow-light">
+      <div className="pt-20 pb-2 bg-brand-yellow-light">
         <CleaningPackages />
       </div>
       <div className="py-6 bg-white">
