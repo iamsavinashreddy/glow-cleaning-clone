@@ -31,7 +31,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center h-20">
-        {/* Logo */}
+        {/* Logo (now serves as home link) */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <img 
@@ -45,20 +45,18 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="font-medium hover:text-brand-yellow">Home</Link>
-          <Link to="/services" className="font-medium hover:text-brand-yellow">Services</Link>
-          <Link to="/packages" className="font-medium hover:text-brand-yellow">Packages</Link>
-          <Link to="/about" className="font-medium hover:text-brand-yellow">About</Link>
-          <Link to="/contact" className="font-medium hover:text-brand-yellow">Contact</Link>
+          <Link to="/services" className="font-medium hover:text-brand-yellow hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">Services</Link>
+          <Link to="/packages" className="font-medium hover:text-brand-yellow hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">Packages</Link>
+          <Link to="/contact" className="font-medium hover:text-brand-yellow hover:bg-gray-100 px-3 py-2 rounded-md transition-colors">Contact</Link>
         </nav>
 
-        {/* Call To Action */}
+        {/* Call To Action - moved to center */}
         <div className="hidden md:flex items-center space-x-4">
           <div className="flex items-center">
             <Phone size={18} className="text-brand-yellow mr-2" />
             <span className="font-medium">1-800-CLEAN</span>
           </div>
-          <Button className="primary-button">Book Now</Button>
+          <Button onClick={() => window.location.href = "/contact"} className="primary-button">Book Now</Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -74,16 +72,15 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white py-4 px-4 shadow-lg animate-slide-down">
           <nav className="flex flex-col space-y-4">
-            <Link to="/" className="font-medium py-2 hover:text-brand-yellow">Home</Link>
-            <Link to="/services" className="font-medium py-2 hover:text-brand-yellow">Services</Link>
-            <Link to="/packages" className="font-medium py-2 hover:text-brand-yellow">Packages</Link>
-            <Link to="/about" className="font-medium py-2 hover:text-brand-yellow">About</Link>
-            <Link to="/contact" className="font-medium py-2 hover:text-brand-yellow">Contact</Link>
+            <Link to="/services" className="font-medium py-2 hover:text-brand-yellow hover:bg-gray-100 px-2 rounded">Services</Link>
+            <Link to="/packages" className="font-medium py-2 hover:text-brand-yellow hover:bg-gray-100 px-2 rounded">Packages</Link>
+            <Link to="/contact" className="font-medium py-2 hover:text-brand-yellow hover:bg-gray-100 px-2 rounded">Contact</Link>
+            <Link to="/about" className="font-medium py-2 hover:text-brand-yellow hover:bg-gray-100 px-2 rounded">About Us</Link>
             <div className="flex items-center py-2">
               <Phone size={18} className="text-brand-yellow mr-2" />
               <span className="font-medium">1-800-CLEAN</span>
             </div>
-            <Button className="primary-button w-full mt-2">Book Now</Button>
+            <Button onClick={() => window.location.href = "/contact"} className="primary-button w-full mt-2">Book Now</Button>
           </nav>
         </div>
       )}

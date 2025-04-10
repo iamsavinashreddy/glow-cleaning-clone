@@ -2,13 +2,14 @@
 import Navbar from "@/components/Navbar";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
+import FounderSection from "@/components/FounderSection";
 import { CheckCircle } from "lucide-react";
 
 const About = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div className="pt-32 pb-12 bg-brand-yellow-light">
+      <div className="pt-32 pb-8 bg-brand-yellow-light">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -17,7 +18,7 @@ const About = () => {
         </div>
       </div>
       
-      <section className="section-padding bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="w-full md:w-1/2">
@@ -61,11 +62,13 @@ const About = () => {
         </div>
       </section>
       
-      <section className="section-padding bg-gray-50">
+      <FounderSection />
+      
+      <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-12">Our Cleaning Process</h2>
+          <h2 className="text-3xl font-bold mb-8">Our Cleaning Process</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-brand-yellow rounded-full mb-4 text-black font-bold">
                 1
