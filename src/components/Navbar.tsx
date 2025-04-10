@@ -37,7 +37,7 @@ const Navbar = () => {
             <img 
               src="https://raw.githubusercontent.com/iamsavinashreddy/vrbest-group/main/Img/vr-best-shiners-logo-1.png" 
               alt="VR Best Shiners Logo" 
-              className="h-10 md:h-16 lg:h-20"
+              className="h-13 md:h-16 lg:h-20"
             />
           </Link>
         </div>
