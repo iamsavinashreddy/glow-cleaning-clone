@@ -48,7 +48,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div className="pt-32 pb-12 bg-brand-yellow-light">
+      <div className="pt-30 pb-5 bg-brand-yellow-light">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -57,7 +57,7 @@ const Contact = () => {
         </div>
       </div>
       
-      <section className="py-10 px-25 bg-white">
+      <section className="py-10 px-30 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="w-full lg:w-1/3">
