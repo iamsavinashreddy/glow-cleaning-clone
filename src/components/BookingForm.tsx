@@ -53,16 +53,16 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
 
   if (submitted) {
     return (
-      <div className="text-center py-8 px-4 max-w-md mx-auto">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
-          <Check className="h-8 w-8 text-green-600" />
+      <div className="text-center py-4 sm:py-8 px-3 sm:px-4 max-w-md mx-auto">
+        <div className="inline-flex items-center justify-center w-12 sm:w-16 h-12 sm:h-16 rounded-full bg-green-100 mb-3 sm:mb-4">
+          <Check className="h-6 sm:h-8 w-6 sm:w-8 text-green-600" />
         </div>
-        <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
-        <p className="text-gray-600 mb-4">
+        <h3 className="text-xl sm:text-2xl font-bold mb-2">Thank You!</h3>
+        <p className="text-gray-600 mb-4 text-sm sm:text-base">
           Your booking request has been received. We'll contact you shortly to confirm your appointment.
         </p>
         <Button 
-          className="primary-button"
+          className="primary-button text-sm"
           onClick={() => setSubmitted(false)}
         >
           Book Another Service
@@ -72,20 +72,20 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
   }
 
   return (
-    <div className="p-4 sm:p-6 max-w-3xl mx-auto w-full">
-      <div className="text-center mb-6">
-        <h3 className="text-xl sm:text-2xl font-bold">Book Your Cleaning Service</h3>
+    <div className="p-2 sm:p-4 md:p-6 max-w-3xl mx-auto w-full">
+      <div className="text-center mb-4 sm:mb-6">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold">Book Your Cleaning Service</h3>
         {packageInfo && (
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-sm sm:text-base">
             {packageInfo.title} - {packageInfo.size} (${packageInfo.price})
           </p>
         )}
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <label htmlFor="name" className="text-sm font-medium">
+      <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+          <div className="space-y-1 sm:space-y-2">
+            <label htmlFor="name" className="text-xs sm:text-sm font-medium">
               Full Name
             </label>
             <Input
@@ -94,11 +94,11 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full"
+              className="w-full text-sm"
             />
           </div>
-          <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium">
+          <div className="space-y-1 sm:space-y-2">
+            <label htmlFor="email" className="text-xs sm:text-sm font-medium">
               Email
             </label>
             <Input
@@ -108,14 +108,14 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full"
+              className="w-full text-sm"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <label htmlFor="phone" className="text-sm font-medium">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+          <div className="space-y-1 sm:space-y-2">
+            <label htmlFor="phone" className="text-xs sm:text-sm font-medium">
               Phone Number
             </label>
             <Input
@@ -124,11 +124,11 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full"
+              className="w-full text-sm"
             />
           </div>
-          <div className="space-y-2">
-            <label htmlFor="address" className="text-sm font-medium">
+          <div className="space-y-1 sm:space-y-2">
+            <label htmlFor="address" className="text-xs sm:text-sm font-medium">
               Address
             </label>
             <Input
@@ -137,14 +137,14 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
               value={formData.address}
               onChange={handleChange}
               required
-              className="w-full"
+              className="w-full text-sm"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <label htmlFor="date" className="text-sm font-medium">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+          <div className="space-y-1 sm:space-y-2">
+            <label htmlFor="date" className="text-xs sm:text-sm font-medium">
               Preferred Date
             </label>
             <Input
@@ -154,11 +154,11 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
               value={formData.date}
               onChange={handleChange}
               required
-              className="w-full"
+              className="w-full text-sm"
             />
           </div>
-          <div className="space-y-2">
-            <label htmlFor="time" className="text-sm font-medium">
+          <div className="space-y-1 sm:space-y-2">
+            <label htmlFor="time" className="text-xs sm:text-sm font-medium">
               Preferred Time
             </label>
             <Input
@@ -168,13 +168,13 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
               value={formData.time}
               onChange={handleChange}
               required
-              className="w-full"
+              className="w-full text-sm"
             />
           </div>
         </div>
 
-        <div className="space-y-2">
-          <label htmlFor="notes" className="text-sm font-medium">
+        <div className="space-y-1 sm:space-y-2">
+          <label htmlFor="notes" className="text-xs sm:text-sm font-medium">
             Special Instructions
           </label>
           <Textarea
@@ -183,11 +183,11 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
             value={formData.notes}
             onChange={handleChange}
             rows={3}
-            className="w-full"
+            className="w-full text-sm"
           />
         </div>
 
-        <Button type="submit" className="primary-button w-full sm:w-auto sm:min-w-[200px]">
+        <Button type="submit" className="primary-button w-full sm:w-auto sm:min-w-[200px] text-sm">
           Submit Booking Request
         </Button>
       </form>
