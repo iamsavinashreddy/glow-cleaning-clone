@@ -55,9 +55,9 @@ const Navbar = () => {
 
         {/* Desktop Navigation - Moved to right */}
         <nav className="hidden md:flex items-center space-x-4">
-          <Link to="/services" className="font-medium hover:text-brand-yellow hover:bg-brand-yellow-light px-3 py-2 rounded-md transition-colors">Services</Link>
-          <Link to="/packages" className="font-medium hover:text-brand-yellow hover:bg-brand-yellow-light px-3 py-2 rounded-md transition-colors">Packages</Link>
-          <Link to="/contact" className="font-medium hover:text-brand-yellow hover:bg-brand-yellow-light px-3 py-2 rounded-md transition-colors">Contact</Link>
+          <Link to="/services" className="font-medium hover:bg-brand-yellow px-3 py-2 rounded-md transition-colors">Services</Link>
+          <Link to="/packages" className="font-medium hover:bg-brand-yellow px-3 py-2 rounded-md transition-colors">Packages</Link>
+          <Link to="/contact" className="font-medium hover:bg-brand-yellow px-3 py-2 rounded-md transition-colors">Contact</Link>
         </nav>
 
         {/* Mobile Menu Button */}
