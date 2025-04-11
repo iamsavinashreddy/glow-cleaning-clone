@@ -2,7 +2,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { BookingForm } from "@/components/BookingForm";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { 
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogTitle,
+  DialogDescription
+} from "@/components/ui/dialog";
 import { 
   Carousel,
   CarouselContent,
@@ -180,11 +186,17 @@ const cleaningPackages: Package[] = [
 const CleaningPackages = () => {
   const [selectedPackage, setSelectedPackage] = useState<Package | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const filteredPackages = cleaningPackages.filter(pkg => 
     pkg.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     pkg.size.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const handleBookNow = (pkg: Package) => {
+    setSelectedPackage(pkg);
+    setIsDialogOpen(true);
+  };
 
   return (
     <section id="packages" className="section-padding bg-brand-yellow-light py-8">
@@ -242,21 +254,12 @@ const CleaningPackages = () => {
                     ))}
                   </ul>
                   
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button 
-                        className="primary-button w-full mt-auto text-sm py-2" 
-                        onClick={() => setSelectedPackage(pkg)}
-                      >
-                        Book Now
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-[500px]">
-                      <BookingForm 
-                        packageInfo={selectedPackage} 
-                      />
-                    </DialogContent>
-                  </Dialog>
+                  <Button 
+                    className="primary-button w-full mt-auto text-sm py-2" 
+                    onClick={() => handleBookNow(pkg)}
+                  >
+                    Book Now
+                  </Button>
                 </div>
               </CarouselItem>
             ))}
@@ -267,6 +270,17 @@ const CleaningPackages = () => {
           </div>
         </Carousel>
       </div>
+
+      {/* Booking Dialog with proper accessibility attributes */}
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="sm:max-w-[500px] p-0">
+          <DialogTitle className="sr-only">Book Your Cleaning Service</DialogTitle>
+          <DialogDescription className="sr-only">
+            {selectedPackage ? `${selectedPackage.title} - ${selectedPackage.size} ($${selectedPackage.price})` : "Book a cleaning service"}
+          </DialogDescription>
+          <BookingForm packageInfo={selectedPackage} />
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

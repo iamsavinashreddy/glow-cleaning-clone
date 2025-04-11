@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -24,6 +23,7 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -42,7 +42,7 @@ const Contact = () => {
       description: "We've received your message and will get back to you soon.",
     });
     
-    // Reset form
+    // Reset form and close dialog if open
     setFormData({
       name: "",
       email: "",
@@ -50,6 +50,7 @@ const Contact = () => {
       subject: "",
       message: "",
     });
+    setIsDialogOpen(false);
   };
 
   return (
@@ -119,11 +120,11 @@ const Contact = () => {
             </div>
             
             <div className="w-full lg:w-2/3 bg-gray-50 rounded-lg p-8">
-              <Dialog>
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogContent>
                   <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold mb-6">Send Us a Message</DialogTitle>
-                    <DialogDescription className="text-gray-600">
+                    <DialogTitle>Send Us a Message</DialogTitle>
+                    <DialogDescription>
                       Fill out the form below and we'll get back to you as soon as possible.
                     </DialogDescription>
                   </DialogHeader>
@@ -131,11 +132,11 @@ const Contact = () => {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label htmlFor="name" className="text-sm font-medium">
+                        <label htmlFor="dialog-name" className="text-sm font-medium">
                           Full Name*
                         </label>
                         <Input
-                          id="name"
+                          id="dialog-name"
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
@@ -144,11 +145,11 @@ const Contact = () => {
                       </div>
                       
                       <div className="space-y-2">
-                        <label htmlFor="email" className="text-sm font-medium">
+                        <label htmlFor="dialog-email" className="text-sm font-medium">
                           Email Address*
                         </label>
                         <Input
-                          id="email"
+                          id="dialog-email"
                           name="email"
                           type="email"
                           value={formData.email}
@@ -160,11 +161,11 @@ const Contact = () => {
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label htmlFor="phone" className="text-sm font-medium">
+                        <label htmlFor="dialog-phone" className="text-sm font-medium">
                           Phone Number
                         </label>
                         <Input
-                          id="phone"
+                          id="dialog-phone"
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
@@ -172,11 +173,11 @@ const Contact = () => {
                       </div>
                       
                       <div className="space-y-2">
-                        <label htmlFor="subject" className="text-sm font-medium">
+                        <label htmlFor="dialog-subject" className="text-sm font-medium">
                           Subject*
                         </label>
                         <Input
-                          id="subject"
+                          id="dialog-subject"
                           name="subject"
                           value={formData.subject}
                           onChange={handleChange}
@@ -186,11 +187,11 @@ const Contact = () => {
                     </div>
                     
                     <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium">
+                      <label htmlFor="dialog-message" className="text-sm font-medium">
                         Message*
                       </label>
                       <Textarea
-                        id="message"
+                        id="dialog-message"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
