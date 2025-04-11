@@ -53,7 +53,7 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
 
   if (submitted) {
     return (
-      <div className="text-center py-8">
+      <div className="text-center py-8 px-4 max-w-md mx-auto">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
           <Check className="h-8 w-8 text-green-600" />
         </div>
@@ -72,9 +72,9 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 sm:p-6 max-w-3xl mx-auto w-full">
       <div className="text-center mb-6">
-        <h3 className="text-xl font-bold">Book Your Cleaning Service</h3>
+        <h3 className="text-xl sm:text-2xl font-bold">Book Your Cleaning Service</h3>
         {packageInfo && (
           <p className="text-gray-600">
             {packageInfo.title} - {packageInfo.size} (${packageInfo.price})
@@ -94,6 +94,7 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
               value={formData.name}
               onChange={handleChange}
               required
+              className="w-full"
             />
           </div>
           <div className="space-y-2">
@@ -107,6 +108,7 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
               value={formData.email}
               onChange={handleChange}
               required
+              className="w-full"
             />
           </div>
         </div>
@@ -122,6 +124,7 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
               value={formData.phone}
               onChange={handleChange}
               required
+              className="w-full"
             />
           </div>
           <div className="space-y-2">
@@ -134,6 +137,7 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
               value={formData.address}
               onChange={handleChange}
               required
+              className="w-full"
             />
           </div>
         </div>
@@ -150,6 +154,7 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
               value={formData.date}
               onChange={handleChange}
               required
+              className="w-full"
             />
           </div>
           <div className="space-y-2">
@@ -163,6 +168,7 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
               value={formData.time}
               onChange={handleChange}
               required
+              className="w-full"
             />
           </div>
         </div>
@@ -177,10 +183,11 @@ export const BookingForm = ({ packageInfo }: BookingFormProps) => {
             value={formData.notes}
             onChange={handleChange}
             rows={3}
+            className="w-full"
           />
         </div>
 
-        <Button type="submit" className="primary-button w-full">
+        <Button type="submit" className="primary-button w-full sm:w-auto sm:min-w-[200px]">
           Submit Booking Request
         </Button>
       </form>
